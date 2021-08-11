@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+:root{
+	/* ----- primary ----- */
+	--red: hsl(0, 78%, 62%);
+	--cyan: hsl(180, 62%, 55%);
+	--orange: hsl(34, 97%, 64%);
+	--blue: hsl(212, 86%, 64%);
+
+	/* ----- neutral ----- */
+	--very-dark-blue: hsl(234, 12%, 34%); /* title */
+	--grayish-blue: hsl(229, 6%, 66%); /* subtitle */
+	--very-light-gray: hsl(0, 0%, 98%); /* background */
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	/* box-sizing: border-box; */
+	font-family: "Poppins", sans-serif;
+}
+body{
+	padding: 50px;
+	font-size: 15px;
+	background: var(--very-light-gray);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+section{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	float: right;	
+}
+
+.title{
+	text-align: center;
+	font-weight: 600;
+	color: var(--very-dark-blue);
+	font-size: 2.25rem;
+}
+.light{
+	font-weight: 300;
+}
+.subtitle{
+	color: var(--grayish-blue);
+	text-align: center;
+	margin: 20px 0 40px;
+}
+
+.features{
+	display: flex;
+	justify-content: center;
+	align-items:  center;
+}
+.card{
+	padding: 35px;
+	position: relative;
+	border-radius: 10px;
+	margin: 40px 20px;
+	min-height: 280px;
+	min-width: 380px;
+	max-width: 380px;
+	overflow: hidden;
+	background: #fff;
+	box-shadow: 0px 15px 10px rgba(0, 0, 0, .1);
+}
+.card::before{
+	content: '';
+	position: absolute;
+	top: 0;left: 0;
+	height: 5px;
+	width: 100%;
+}
+.cardBx{
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+}
+.card:nth-child(1)::before{background-color: var(--red);}
+.cardBx .card:nth-child(1)::before{background-color: var(--cyan);}
+.cardBx .card:nth-child(2)::before{background-color: var(--orange);}
+.card:nth-child(3)::before{background-color: var(--blue);}
+
+.card .heading{
+	color: var(--very-dark-blue);
+	font-size: 1.4em;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+.card .text{
+	color: var(--grayish-blue);
+	/* font-size: 15px; */
+	line-height: 1.75;
+}
+.card .icon{
+	position: absolute;
+	right: 30px;
+	bottom: 30px;
+}
+
+@media (max-width: 720px) {
+	body{
+		max-width: 500px;
+		margin: 0;
+		padding: 30px 10px;
+	}
+	.features{
+		display: flex;
+		flex-direction: column;
+	}
+	.title{
+		font-size: 2rem;
+	}
+	.subtitle{max-width: 80%;margin: 20px auto 30px}
+	.card{
+		margin: 30px;
+	}
+}
